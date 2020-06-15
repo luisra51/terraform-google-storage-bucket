@@ -1,5 +1,5 @@
 variable "name" {
-  type        = "list"
+  type        = list(string)
   description = "The name of the bucket."
 }
 
@@ -41,7 +41,7 @@ variable "is_live" {
 
 variable "matches_storage_class" {
   description = "Storage Class of objects to satisfy this condition. Supported values include: MULTI_REGIONAL, REGIONAL, NEARLINE, COLDLINE, STANDARD, DURABLE_REDUCED_AVAILABILITY."
-  type        = "list"
+  type        = list(string)
   default     = ["REGIONAL"]
 }
 
@@ -76,6 +76,7 @@ variable "default_acl" {
 
 variable "role_entity" {
   description = "List of role/entity pairs in the form ROLE:entity."
-  type        = "list"
+  type        = list(string)
   default     = []
 }
+
